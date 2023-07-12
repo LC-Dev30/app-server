@@ -1,0 +1,12 @@
+<%- include('partials/header')%>
+  <h1>Lista de Usuarios</h1>
+
+  <ul>
+    <% for(let i = 0; i < listaUsuarios.length; i++) { %>
+         <li><%= listaUsuarios[i].name %></li>
+    <% } %>
+  </ul>
+
+  <a href="/">Pagina principal</a>
+
+<%- include('partials/footer')%>
