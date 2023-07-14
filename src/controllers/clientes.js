@@ -16,3 +16,7 @@ export const clientesPrimium = (req,res) => {
         ]
      })
 }
+
+export const prueba = (req,res) => {
+    res.render('index')
+}
