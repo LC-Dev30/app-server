@@ -19,6 +19,7 @@ app.set('views',join(__dirname,'views'))
 //miderwalls
 app.use(routeUsuarios);
 app.use(routeClientes)
+app.use(express.static(join(__dirname,'public')))
 
 
 //puerto

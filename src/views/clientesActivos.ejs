@@ -1,5 +1,17 @@
 <%- include('partials/header') %>
-  <h1>Clientes Activos</h1>
+  <h1 class="card-header">Clientes Activos</h1>
+
+  <ul>
+    <% for(let i = 0; i < datos.length; i++) { %>
+         <li class="m-2">
+            <img src="<%= datos[i].image %>" alt="">
+            <h4><%= datos[i].name %></h4>
+            <span><%= datos[i].email %></span>
+            <br>
+            <a class="btn btn-secondary" href="<%= datos[i].id %>">ver perfil</a>
+         </li>
+    <% } %>
+  </ul>
 
   <a href="/">Usuarios</a>
 <%- include('partials/footer') %>

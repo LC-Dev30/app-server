@@ -40,6 +40,6 @@ export const clientesActivos = (req,res) => {
          res.send(`hubo un error: ${err}`)
          console.log(err);
       }
-      res.json({datos: data.rows})
+      res.render('clientesActivos',{datos: data.rows})
    })
 }
