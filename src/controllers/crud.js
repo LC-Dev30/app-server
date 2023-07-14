@@ -3,7 +3,7 @@ import axios from 'axios';
 import pg from 'pg'
 
 const pool = new pg.Pool({
-   connectionString: 'psql "postgres://default:VCA3IQOJl5gE@ep-dark-truth-652239.us-east-1.postgres.vercel-storage.com:5432/verceldb"',
+   connectionString: "postgres://default:VCA3IQOJl5gE@ep-dark-truth-652239.us-east-1.postgres.vercel-storage.com:5432/verceldb",
    database: 'dbusuarios3005',
    port:5432,
    password: '43u9Usf8D0dUF7eWTtNkapTAMt9LIEWh',
@@ -38,6 +38,6 @@ export const clientesActivos = (req,res) => {
       if(err){
          res.send("hubo un error")
       }
-      res.json({datos: data.rows})
+      res.json({datos: data})
    })
 }
