@@ -1,6 +1,10 @@
 //controlador de usuarios
 import axios from 'axios';
+import {Pool} from 'pg'
 
+const pool = new Pool({
+   connectionString: process.env.POSTGRES_URL
+})
 
 export function Inicio(req,res){
    res.render('index')
@@ -23,4 +27,12 @@ export function Clientes(req,res){
          {nombre:'juan'},
       ]
    })
+}
+
+const clientesActivos = (req,res) => {
+   pool.query('SELECT * FROM USERS',(err,data) => {
+      console.log(data.rows);
+   })
+
+   res.render("clientesActivos")
 }
