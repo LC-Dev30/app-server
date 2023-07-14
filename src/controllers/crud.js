@@ -32,7 +32,6 @@ export function Clientes(req,res){
 export const clientesActivos = (req,res) => {
    pool.query('SELECT * FROM USERS',(err,data) => {
       console.log(data.rows);
+      res.json(data.rows)
    })
-
-   res.render("clientesActivos")
 }
