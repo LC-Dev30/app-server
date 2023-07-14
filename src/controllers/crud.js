@@ -3,7 +3,11 @@ import axios from 'axios';
 import pg from 'pg'
 
 const pool = new pg.Pool({
-   connectionString: process.env.POSTGRES_URL
+   connectionString: process.env.POSTGRES_URL,
+   database: 'dbusuarios3005',
+   port:5432,
+   password: '43u9Usf8D0dUF7eWTtNkapTAMt9LIEWh',
+   user: 'leo3005'
 })
 
 export function Inicio(req,res){
@@ -31,7 +35,9 @@ export function Clientes(req,res){
 
 export const clientesActivos = (req,res) => {
    pool.query('SELECT * FROM USERS',(err,data) => {
-      console.log(data.rows);
-      res.json(data.rows)
+      if(err){
+         res.send("hubo un error")
+      }
+      res.json({datos: data.rows})
    })
 }
